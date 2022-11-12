@@ -18,6 +18,7 @@ import java.util.List;
 @ToString
 public class Event extends AbstractEntity{
 
+    private String name;;
     private String description;
     private Date eventDate;
     private Date endDate;
@@ -25,15 +26,20 @@ public class Event extends AbstractEntity{
     private String place;
     private Long participantsEstimation;
 
+    private boolean status;
+
     //planning
 
     @OneToMany(mappedBy="event")
+    @JsonIgnore
     private List<Speaker> speakers;
 
     @OneToMany(mappedBy="event")
+    @JsonIgnore
     private List<Committee> committees;
 
     @OneToMany(mappedBy="event")
+    @JsonIgnore
     private List<Sponsor> sponsors;
 
 

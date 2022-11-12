@@ -44,4 +44,9 @@ public class CommitteeServiceImpl implements CommitteeService {
             throw new NotFoundException();
         }
     }
+
+    @Override
+    public List<Committee> getCommitteesByEventId(Long id) {
+        return this.committeeRepository.findAllByEventId(id);
+    }
 }

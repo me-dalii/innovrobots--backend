@@ -30,6 +30,5 @@ public class Committee extends AbstractEntity{
 
     @ManyToOne
     @JoinColumn(name="event_id", nullable=false)
-    @JsonIgnore
     private Event event;
 }

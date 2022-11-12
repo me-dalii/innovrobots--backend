@@ -11,4 +11,7 @@ public interface CommitteeService {
     Committee getCommitteeById(Long id) throws NotFoundException;
     void saveCommittee(Committee committee);
     void deleteCommittee(Long id) throws NotFoundException;
+
+    List<Committee> getCommitteesByEventId(Long id);
+
 }

@@ -35,4 +35,9 @@ public class SpeakerController {
     public void deleteSpeaker(@PathVariable(name = "id") Long id) throws NotFoundException {
         speakerService.deleteSpeaker(id);
     }
+
+    @GetMapping("/event/{id}")
+    public List<Speaker> getSpeakersByEventId(@PathVariable(name = "id") Long id) throws NotFoundException {
+        return speakerService.getSpeakersByEventId(id);
+    }
 }

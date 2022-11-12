@@ -24,6 +24,11 @@ public class EventController {
         return eventService.getEventById(id);
     }
 
+    @GetMapping("/activated")
+    public Event getActivatedEvent() throws NotFoundException {
+        return eventService.getActivatedEvent();
+    }
+
     @PostMapping("/")
     public void saveEvent(@RequestBody Event event){
         eventService.saveEvent(event);
@@ -33,4 +38,10 @@ public class EventController {
     public void deleteEvent(@PathVariable(name = "id") Long id) throws NotFoundException {
         eventService.deleteEvent(id);
     }
+
+    @PutMapping("/{id}")
+    public void activateEvent(@PathVariable(name = "id") Long id) throws NotFoundException {
+        eventService.activateEvent(id);
+    }
+
 }

@@ -46,4 +46,9 @@ public class SponsorServiceImpl implements SponsorService {
             throw new NotFoundException();
         }
     }
+
+    @Override
+    public List<Sponsor> getSponsorsByEventId(Long id) {
+        return this.sponsorRepository.findAllByEventId(id);
+    }
 }

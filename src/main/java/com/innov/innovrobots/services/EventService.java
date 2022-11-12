@@ -11,4 +11,8 @@ public interface EventService {
     Event getEventById(Long id) throws NotFoundException;
     void saveEvent(Event event);
     void deleteEvent(Long id) throws NotFoundException;
+    void activateEvent(Long id) throws NotFoundException;
+    Event getActivatedEvent() throws NotFoundException;
+
+
 }

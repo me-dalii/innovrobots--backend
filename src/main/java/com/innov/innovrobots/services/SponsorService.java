@@ -10,4 +10,7 @@ public interface SponsorService {
     Sponsor getSponsorById(Long id) throws NotFoundException;
     void saveSponsor(Sponsor sponsor);
     void deleteSponsor(Long id) throws NotFoundException;
+
+    List<Sponsor> getSponsorsByEventId(Long id);
+
 }

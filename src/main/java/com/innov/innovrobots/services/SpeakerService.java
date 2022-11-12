@@ -11,4 +11,6 @@ public interface SpeakerService {
     Speaker getSpeakerById(Long id) throws NotFoundException;
     void saveSpeaker(Speaker speaker);
     void deleteSpeaker(Long id) throws NotFoundException;
+
+    List<Speaker> getSpeakersByEventId(Long id);
 }

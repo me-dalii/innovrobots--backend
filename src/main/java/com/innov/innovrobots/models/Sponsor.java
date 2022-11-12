@@ -22,6 +22,5 @@ public class Sponsor extends AbstractEntity{
 
     @ManyToOne
     @JoinColumn(name="event_id", nullable=false)
-    @JsonIgnore
     private Event event;
 }

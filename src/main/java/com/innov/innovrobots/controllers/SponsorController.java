@@ -1,9 +1,7 @@
 package com.innov.innovrobots.controllers;
 
 import com.innov.innovrobots.exceptions.NotFoundException;
-import com.innov.innovrobots.models.Event;
 import com.innov.innovrobots.models.Sponsor;
-import com.innov.innovrobots.services.EventService;
 import com.innov.innovrobots.services.SponsorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,5 +33,10 @@ public class SponsorController {
     @DeleteMapping("/{id}")
     public void deleteSponsor(@PathVariable(name = "id") Long id) throws NotFoundException {
         sponsorService.deleteSponsor(id);
+    }
+
+    @GetMapping("/event/{id}")
+    public List<Sponsor> getSponsorsByEventId(@PathVariable(name = "id") Long id) throws NotFoundException {
+        return sponsorService.getSponsorsByEventId(id);
     }
 }

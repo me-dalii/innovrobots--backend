@@ -44,4 +44,9 @@ public class SpeakerServiceImpl implements SpeakerService {
             throw new NotFoundException();
         }
     }
+
+    @Override
+    public List<Speaker> getSpeakersByEventId(Long id) {
+        return this.speakerRepository.findAllByEventId(id);
+    }
 }
