@@ -24,7 +24,6 @@ public class Event extends AbstractEntity{
     private Date endDate;
     private Long numberOfDays;
     private String place;
-    private Long participantsEstimation;
 
     private boolean status;
 
@@ -41,6 +40,25 @@ public class Event extends AbstractEntity{
     @OneToMany(mappedBy="event")
     @JsonIgnore
     private List<Sponsor> sponsors;
+
+    @OneToMany(mappedBy="event")
+    @JsonIgnore
+    private List<Student> students;
+    private Long numberOfAllowedStudents;
+    private Long studentsPrice;
+
+
+    @OneToMany(mappedBy="event")
+    @JsonIgnore
+    private List<Teacher> teachers;
+    private Long numberOfAllowedTeachers;
+    private Long teachersPrice;
+
+    @OneToMany(mappedBy="event")
+    @JsonIgnore
+    private List<Company> companies;
+    private Long numberOfAllowedCompanies;
+    private Long companiesPrice;
 
 
 }

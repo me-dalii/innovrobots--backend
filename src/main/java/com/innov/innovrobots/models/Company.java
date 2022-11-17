@@ -14,11 +14,12 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @Data
 @ToString
-public class Sponsor extends AbstractEntity{
-
+public class Company extends AbstractEntity{
     private String name;
     private String description;
-
+    private String email;
+    private String phone;
+    private String address;
     @ManyToOne
     @JoinColumn(name="event_id", nullable=false)
     private Event event;

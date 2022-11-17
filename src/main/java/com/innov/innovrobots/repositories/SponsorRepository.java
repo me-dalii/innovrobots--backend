@@ -9,5 +9,4 @@ import java.util.List;
 @Repository
 public interface SponsorRepository extends JpaRepository<Sponsor, Long> {
     List<Sponsor> findAllByEventId(Long id);
-
 }

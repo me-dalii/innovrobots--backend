@@ -2,7 +2,6 @@ package com.innov.innovrobots.controllers;
 
 import com.innov.innovrobots.exceptions.NotFoundException;
 import com.innov.innovrobots.models.Committee;
-import com.innov.innovrobots.models.Speaker;
 import com.innov.innovrobots.services.CommitteeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
