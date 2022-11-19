@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +23,9 @@ public class Event extends AbstractEntity{
     private Date endDate;
     private Long numberOfDays;
     private String place;
+
+    private String youtubeTeaserLink;
+    private String youtubeLiveStreamLink;
 
     private boolean status;
 
@@ -57,8 +59,28 @@ public class Event extends AbstractEntity{
     @OneToMany(mappedBy="event")
     @JsonIgnore
     private List<Company> companies;
+
     private Long numberOfAllowedCompanies;
     private Long companiesPrice;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="logo_id", referencedColumnName = "id")
+    private CustomFile logo;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="banner_id", referencedColumnName = "id")
+    private CustomFile banner;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="poster_id", referencedColumnName = "id")
+    private CustomFile poster;
+
+
+    @OneToMany(mappedBy="event")
+    @JsonIgnore
+    private List<CustomFile> album;
+
+
 
 
 }
